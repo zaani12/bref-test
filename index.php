@@ -1,11 +1,17 @@
 <?php
 
-$page = $_GET['page'] ?? 'home'; 
+class PageRenderer {
+    private $page;
+    public function __construct($page) {
+        $this->page = $page;
+    }
+    public function render() {
+        $page = $_GET['page'] ?? 'home';
 
-function render($page) {
-    include 'templat.php';
-    
+        include 'templat.php';
+    }
 }
 
-render($page);
+$renderer = new PageRenderer($page);
+$renderer->render();
 ?>
