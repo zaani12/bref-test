@@ -6,7 +6,7 @@ class PageRenderer {
         $this->page = $page;
     }
     public function render() {
-        $page = $_GET['page'] ?? 'home';
+        $page = $_GET['page'] ?? './home.php';
 
         include 'templat.php';
     }
